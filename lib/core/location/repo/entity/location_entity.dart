@@ -1,3 +1,6 @@
+import 'package:objectbox/objectbox.dart';
+
+@Entity()
 class LocationModel {
   int id;
   String name;
