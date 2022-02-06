@@ -31,6 +31,7 @@ dependencies:
   objectbox_flutter_libs: any
   # for ObjectBox Sync use this dependency instead:
   # objectbox_sync_flutter_libs: any
+  get: ^4.6.1
 
 #  shared_preferences: ^2.0.12
 
