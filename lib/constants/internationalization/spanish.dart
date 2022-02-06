@@ -7,7 +7,8 @@ class Spanish extends Translations {
         'es_ES': {
           'app_name': 'POS Sales',
           'login': 'Iniciar sesion',
-          'enable_notifications' : 'Hola Mundo'
+          'enable_notifications' : 'Hola Mundo',
+          'auth_button' : 'Autenticar'
         }
       };
 }
