@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class login_ui extends StatelessWidget {
+class LoginUI extends StatelessWidget {
   final TextEditingController textUser = TextEditingController();
   final TextEditingController textPass = TextEditingController();
 
