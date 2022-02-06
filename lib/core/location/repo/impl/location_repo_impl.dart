@@ -1,5 +1,5 @@
 import 'package:jobits_pos_client_sales/core/location/app/models/location_model.dart';
-import 'package:jobits_pos_client_sales/core/location/app/repo/location_repo.dart';
+import 'package:jobits_pos_client_sales/core/location/repo/location_repo.dart';
 import 'package:jobits_pos_client_sales/objectbox.g.dart';
 
 class location_repo_impl implements location_repo {
