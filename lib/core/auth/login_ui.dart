@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:jobits_pos_client_sales/core/auth/login_controller.dart';
 
-class LoginUI extends StatelessWidget {
-  final TextEditingController textUser = TextEditingController();
-  final TextEditingController textPass = TextEditingController();
+class LoginUI extends GetView<LoginController> {
+  LoginUI() {
+    Get.put(LoginController());
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +16,7 @@ class LoginUI extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('Autenticar',
+              Text('auth_button'.tr,
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 30,
@@ -30,7 +33,7 @@ class LoginUI extends StatelessWidget {
                           const BorderRadius.all(Radius.circular(8.0)),
                     ),
                   ),
-                  controller: textUser,
+                  controller: controller.textUser,
                 ),
               ),
               SizedBox(
@@ -45,15 +48,15 @@ class LoginUI extends StatelessWidget {
                           const BorderRadius.all(Radius.circular(8.0)),
                     ),
                   ),
-                  controller: textPass,
+                  controller: controller.textPass,
                 ),
               ),
               SizedBox(
                 height: 25,
               ),
               ElevatedButton(
-                onPressed: () {},
-                child: Text('Autenticar'),
+                onPressed: () => controller.onAutenticarClick(),
+                child: Text('auth_button'.tr),
               )
             ],
           ),
