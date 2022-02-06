@@ -52,7 +52,7 @@ class WelcomeUI extends GetView<WelcomeController> {
             bottom: 25,
             right: 10,
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () => controller.onEnableNotificationClick(),
               child: Text('enable_notifications'.tr),
             ),
           ),
