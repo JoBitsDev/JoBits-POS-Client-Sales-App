@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:get/get.dart';
-import 'package:jobits_pos_client_sales/core/auth/login_ui.dart';
+import 'package:jobits_pos_client_sales/core/auth/ui/login_ui.dart';
 import 'package:jobits_pos_client_sales/core/welcome/welcome_view_model.dart';
 
 class WelcomeController extends GetxController {

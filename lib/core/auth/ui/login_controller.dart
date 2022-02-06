@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:jobits_pos_client_sales/core/auth/login_view_model.dart';
+import 'package:jobits_pos_client_sales/core/auth/ui/login_view_model.dart';
 
 class LoginController extends GetxController {
   LoginViewModel model = LoginViewModel();

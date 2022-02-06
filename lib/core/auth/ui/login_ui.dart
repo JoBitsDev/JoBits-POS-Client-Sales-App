@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:jobits_pos_client_sales/core/auth/login_controller.dart';
+import 'package:jobits_pos_client_sales/core/auth/ui/login_controller.dart';
 
 class LoginUI extends GetView<LoginController> {
   LoginUI() {
