@@ -19,8 +19,19 @@ class Home extends StatelessWidget {
 
         // Replace the 8 lines Navigator.push by a simple Get.to(). You don't need context
         body: Center(
-            child: ElevatedButton(
-                child: Text("Go to Other"), onPressed: () => Get.to(Other()))),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text('POS Dpte'),
+              ElevatedButton(
+                child: Text("Go to Other"),
+                onPressed: () => Get.to(
+                  Other(),
+                ),
+              ),
+            ],
+          ),
+        ),
         floatingActionButton: FloatingActionButton(
             child: Icon(Icons.add), onPressed: c.increment));
   }
@@ -29,6 +40,7 @@ class Home extends StatelessWidget {
 class Other extends StatelessWidget {
   // You can ask Get to find a Controller that is being used by another page and redirect you to it.
   final main_controller c = Get.find();
+
   @override
   Widget build(context) {
     // Access the updated count variable
