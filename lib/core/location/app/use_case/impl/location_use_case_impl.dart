@@ -1,4 +1,4 @@
-import 'package:jobits_pos_client_sales/core/location/app/models/location_model.dart';
+import 'package:jobits_pos_client_sales/core/location/app/model/location_model.dart';
 import 'package:jobits_pos_client_sales/core/location/app/use_case/location_use_case.dart';
 
 class LocationUseCaseImpl implements LocationUseCase {
