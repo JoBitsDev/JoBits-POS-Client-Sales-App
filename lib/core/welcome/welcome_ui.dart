@@ -5,6 +5,13 @@ import 'package:get/get.dart';
 import 'package:jobits_pos_client_sales/core/welcome/welcome_controller.dart';
 
 class WelcomeUI extends GetView<WelcomeController> {
+  var myMenuItems = <String>[
+    'Cambiar ubicación',
+    'Editar ubicación',
+    'Desactivar modo offline',
+    'Activar modo offline',
+  ];
+
   WelcomeUI() {
     Get.put(WelcomeController()); //TODO: mover de capa
   }
@@ -18,6 +25,18 @@ class WelcomeUI extends GetView<WelcomeController> {
         title: Text(
           'app_name'.tr,
         ),
+        actions: <Widget>[
+          PopupMenuButton<String>(
+              onSelected: onSelect,
+              itemBuilder: (BuildContext context) {
+                return myMenuItems.map((String choice) {
+                  return PopupMenuItem<String>(
+                    child: Text(choice),
+                    value: choice,
+                  );
+                }).toList();
+              })
+        ],
       ),
 
       // Replace the 8 lines Navigator.push by a simple Get.to(). You don't need context
@@ -69,5 +88,23 @@ class WelcomeUI extends GetView<WelcomeController> {
         ],
       ),
     );
+  }
+
+  void onSelect(item) {
+    switch (item) {
+      //'Cambiar ubicación','Editar ubicación','Desactivar modo offline','Activar modo offline'
+      case 'Cambiar ubicación':
+        print('Cambiar ubicación clicked');
+        break;
+      case 'Editar ubicación':
+        print('Editar ubicación clicked');
+        break;
+      case 'Desactivar modo offline':
+        print('Modo offline desactivado');
+        break;
+      case 'Activar modo offline':
+        print('Modo offline activado');
+        break;
+    }
   }
 }
