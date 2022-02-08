@@ -58,7 +58,7 @@ class WelcomeUI extends GetView<WelcomeController> {
                   ),
                 ),
                 SizedBox(
-                  height: 20.0,
+                  height: 15,
                 ),
                 ElevatedButton(
                   child: Text('login'.tr),
