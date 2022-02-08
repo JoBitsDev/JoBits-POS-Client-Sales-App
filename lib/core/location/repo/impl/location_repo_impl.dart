@@ -1,47 +1,52 @@
-import 'package:jobits_pos_client_sales/core/location/app/models/location_model.dart';
+import 'package:jobits_pos_client_sales/constants/app_constants.dart';
+import 'package:jobits_pos_client_sales/core/location/app/model/location_model.dart';
 import 'package:jobits_pos_client_sales/core/location/app/repo/location_repo.dart';
-//import 'package:jobits_pos_client_sales/objectbox.g.dart';
+import 'package:jobits_pos_client_sales/objectbox.g.dart';
 
-class location_repo_impl implements LocationRepo {
+class LocationRepoImpl implements LocationRepo {
+  final Box<LocationModel> locationBox =
+      AppConstants.objectBox.store.box<LocationModel>();
+  final String _selected_location_key = 'selected_location';
 
+  LocationRepoImpl() {}
 
-
-
-  location_repo_impl() {
-    //final store = openStore();
-  //  final Box location_box = store.box<location_model>();
+  @override
+  LocationModel chooseLocation(int locationModel) {
+    LocationModel? ret = locationBox.get(locationModel);
+    AppConstants.sharedPreferences
+        .setInt(_selected_location_key, locationModel);
+    return ret == null ? LocationModel.byDefault() : ret;
   }
 
   @override
-  LocationModel choose_location(LocationModel model) {
+  LocationModel editLocation(LocationModel model) {
+    int id = locationBox.put(model);
+    var ret = locationBox.get(id);
+    return ret == null ? LocationModel.byDefault() : ret;
+  }
+
+  @override
+  List<LocationModel> loadLocations() {
+    return locationBox.getAll();
+  }
+
+  @override
+  LocationModel resolveCurrentLocation() {
+    int? i = AppConstants.sharedPreferences.getInt(_selected_location_key);
+    LocationModel? ret = locationBox.get(i == null ? -1 : i);
+    return ret == null ? LocationModel.byDefault() : ret;
+  }
+
+  @override
+  LocationModel createLocation(LocationModel newLocation) {
+    // TODO: implement createLocation
     throw UnimplementedError();
   }
 
   @override
-  LocationModel edit_location(LocationModel model) {
-    // TODO: implement edit_location
-    throw UnimplementedError();
+  LocationModel deleteLocation(int locationId) {
+    LocationModel del = locationBox.get(locationId)!;
+    locationBox.remove(locationId);
+    return del;
   }
-
-  @override
-  List<LocationModel> load_locations() {
-    //List<location_model> loc = store.bo
-    // return preferences.get
-    throw UnimplementedError();
-
-  }
-
-  @override
-  LocationModel resolve_choosed_location() {
-    // TODO: implement resolve_choosed_location
-    throw UnimplementedError();
-  }
-
-  @override
-  List<LocationModel> save_locations(List<LocationModel> locations) {
-    // TODO: implement save_locations
-    throw UnimplementedError();
-  }
-
-
 }

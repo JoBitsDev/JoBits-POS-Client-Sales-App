@@ -7,27 +7,32 @@ class LocationUseCaseImpl implements LocationUseCase {
   LocationRepo repo = Get.find();
 
   @override
-  LocationModel choose_location(LocationModel model) {
-    return repo.choose_location(model);
+  LocationModel chooseLocation(int locationId) {
+    return repo.chooseLocation(locationId);
   }
 
   @override
-  LocationModel edit_location(LocationModel model) {
-    return repo.edit_location(model);
+  LocationModel createLocation(LocationModel newLocation) {
+    return repo.createLocation(newLocation);
   }
 
   @override
-  List<LocationModel> load_locations() {
-    return repo.load_locations();
+  LocationModel deleteLocation(int locationId) {
+    return repo.deleteLocation(locationId);
   }
 
   @override
-  LocationModel resolve_choosed_location() {
-    return repo.resolve_choosed_location();
+  LocationModel editLocation(LocationModel editedLocation) {
+    return repo.editLocation(editedLocation);
   }
 
   @override
-  List<LocationModel> save_locations(List<LocationModel> locations) {
-    return repo.save_locations(locations);
+  List<LocationModel> loadLocations() {
+    return repo.loadLocations();
+  }
+
+  @override
+  LocationModel? resolve_choosed_location() {
+    return repo.resolveCurrentLocation();
   }
 }

@@ -1,15 +1,15 @@
 import 'package:jobits_pos_client_sales/core/location/app/model/location_model.dart';
 
 abstract class LocationUseCase {
+  LocationModel chooseLocation(int locationId);
 
-  List<LocationModel> load_locations();
+  LocationModel createLocation(LocationModel newLocation);
 
-  List<LocationModel> save_locations(List<LocationModel> locations);
+  LocationModel deleteLocation(int locationId);
 
-  LocationModel edit_location(LocationModel model);
+  LocationModel editLocation(LocationModel editedLocation);
 
-  LocationModel choose_location(LocationModel model);
+  List<LocationModel> loadLocations();
 
-  LocationModel resolve_choosed_location();
-
+  LocationModel? resolve_choosed_location();
 }

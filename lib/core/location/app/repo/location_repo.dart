@@ -1,13 +1,15 @@
 import 'package:jobits_pos_client_sales/core/location/app/model/location_model.dart';
 
 abstract class LocationRepo {
-  List<LocationModel> load_locations();
+  LocationModel chooseLocation(int locationId);
 
-  List<LocationModel> save_locations(List<LocationModel> locations);
+  LocationModel createLocation(LocationModel newLocation);
 
-  LocationModel edit_location(LocationModel model);
+  LocationModel deleteLocation(int locationId);
 
-  LocationModel choose_location(LocationModel model);
+  LocationModel editLocation(LocationModel model);
 
-  LocationModel resolve_choosed_location();
+  List<LocationModel> loadLocations();
+
+  LocationModel resolveCurrentLocation();
 }
