@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.jobits.pos.client.jobits_pos_client_sales">
    <application
-        android:label="jobits_pos_client_sales"
+        android:label="POS Dpte"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
