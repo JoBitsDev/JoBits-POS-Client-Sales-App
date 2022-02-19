@@ -1,9 +1,8 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:jobits_pos_client_sales/core/welcome/welcome_controller.dart';
 
+// ignore: must_be_immutable
 class WelcomeUI extends GetView<WelcomeController> {
   var myMenuItems = <String>[
     'Cambiar ubicación',

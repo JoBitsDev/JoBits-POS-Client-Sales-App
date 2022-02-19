@@ -1,15 +1,11 @@
-import 'package:jobits_pos_client_sales/core/location/app/models/location_model.dart';
+import 'package:jobits_pos_client_sales/core/location/app/model/location_model.dart';
 import 'package:jobits_pos_client_sales/core/location/app/repo/location_repo.dart';
 //import 'package:jobits_pos_client_sales/objectbox.g.dart';
 
 class location_repo_impl implements LocationRepo {
-
-
-
-
   location_repo_impl() {
     //final store = openStore();
-  //  final Box location_box = store.box<location_model>();
+    //  final Box location_box = store.box<location_model>();
   }
 
   @override
@@ -28,7 +24,6 @@ class location_repo_impl implements LocationRepo {
     //List<location_model> loc = store.bo
     // return preferences.get
     throw UnimplementedError();
-
   }
 
   @override
@@ -42,6 +37,4 @@ class location_repo_impl implements LocationRepo {
     // TODO: implement save_locations
     throw UnimplementedError();
   }
-
-
 }
